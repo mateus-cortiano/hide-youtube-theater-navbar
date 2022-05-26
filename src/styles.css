@@ -1,6 +1,6 @@
 /* styles */
 
-#masthead-container {
+#masthead-container.should_transition {
   transition-property: all !important;
   transition-duration: 400ms !important;
   transition-timing-function: ease !important;
@@ -8,7 +8,7 @@
   transition-delay: 250ms !important;
 }
 
-#masthead-container.theater {
+#masthead-container.theater.should_transition {
   opacity: 1 !important;
   z-index: 1000 !important;
   top: -56px !important;
@@ -21,11 +21,11 @@
   transition-delay: 500ms !important;
 }
 
-ytd-page-manager {
+ytd-page-manager.should_transition {
   transition: all 400ms ease !important;
 }
 
-ytd-page-manager.theater {
+ytd-page-manager.theater.should_transition {
   transition-property: all !important;
   transition-duration: 400ms !important;
   transition-timing-function: ease !important;
@@ -35,11 +35,11 @@ ytd-page-manager.theater {
   background: black !important;
 }
 
-#masthead-container {
+#masthead-container.should_transition {
   transition: all 400ms ease !important;
 }
 
-#masthead-container:hover.theater {
+#masthead-container:hover.theater.should_transition {
   opacity: 1 !important;
   top: 0 !important;
   height: 70px !important;
@@ -49,7 +49,7 @@ ytd-page-manager.theater {
   transition-delay: 200ms !important;
 }
 
-#masthead-container:hover.theater ~ ytd-page-manager {
+#masthead-container:hover.theater.should_transition ~ ytd-page-manager {
   margin-top: 56px !important;
   transition-property: all !important;
   transition-duration: 400ms !important;
