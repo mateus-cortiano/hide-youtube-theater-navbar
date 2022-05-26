@@ -1,5 +1,5 @@
 {
-  "name": "hide-nav-bar",
+  "name": "hide-youtube-theater-navbar",
   "version": "0.4.2",
   "description": "js/css injection that hides youtube navbar when in theater mode",
   "main": "src/main.js",
