@@ -6,11 +6,12 @@ const THEATER = 'theater'
 const WATCH_ELEMENT = 'ytd-watch-flexy'
 const MASTHEAD = '#masthead-container'
 const PAGE_MANAGER_CLASS = 'ytd-page-manager'
+const URL_REGEX_PATTERN = /https?:\/\/www.youtube.com($|\/$|\/\?.*$)/
 
 const body = $(document.body)
 const page_manager = $(PAGE_MANAGER_CLASS)
 const masthead = $(MASTHEAD)
-const pattern = new RegExp(/https?:\/\/www.youtube.com($|\/$|\/\?.*$)/)
+const pattern = new RegExp(URL_REGEX_PATTERN)
 
 let interval_id = undefined
 let current_url = window.location.href
