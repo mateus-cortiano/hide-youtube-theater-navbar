@@ -65,10 +65,11 @@ function check_url() {
     if (is_active) {
       is_active = false
       remove_class('theater', masthead, page_manager)
+      remove_class('should_transition', masthead, page_manager)
 
       if (interval_id !== undefined) {
-        clearInterval(interval_id)
         interval_id = undefined
+        clearInterval(interval_id)
       }
     }
 
@@ -79,6 +80,7 @@ function check_url() {
 
   is_active = true
   interval_id = setInterval(update_elements, POLLING_INTERVAL)
+  add_class('should_transition', masthead, page_manager)
 }
 
 setInterval(check_url, POLLING_INTERVAL)
