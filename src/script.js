@@ -1,10 +1,15 @@
 /* js */
 
 const POLLING_INTERVAL = 1500
+const SHOULD_TRANSITION = 'should_transition'
+const THEATER = 'theater'
+const WATCH_ELEMENT = 'ytd-watch-flexy'
+const MASTHEAD = '#masthead-container'
+const PAGE_MANAGER_CLASS = 'ytd-page-manager'
 
 const body = $(document.body)
-const page_manager = $('ytd-page-manager')
-const masthead = $('#masthead-container')
+const page_manager = $(PAGE_MANAGER_CLASS)
+const masthead = $(MASTHEAD)
 const pattern = new RegExp(/https?:\/\/www.youtube.com($|\/$|\/\?.*$)/)
 
 let interval_id = undefined
@@ -44,17 +49,17 @@ function update_elements() {
   if (!is_active) return
 
   Promise.resolve(
-    wait_for_condition(() => ($('ytd-watch-flexy').length === 0 ? false : true))
+    wait_for_condition(() => ($(WATCH_ELEMENT).length === 0 ? false : true))
   ).then(() => {
-    let target = $('ytd-watch-flexy')
-    let istheater = target.attr('theater') === undefined ? false : true
+    let target = $(WATCH_ELEMENT)
+    let istheater = target.attr(THEATER) === undefined ? false : true
 
     if (!istheater) {
-      remove_class('theater', masthead, page_manager)
+      remove_class(THEATER, masthead, page_manager)
       return
     }
 
-    add_class('theater', masthead, page_manager)
+    add_class(THEATER, masthead, page_manager)
   })
 }
 
@@ -64,8 +69,8 @@ function check_url() {
   if (pattern.test(current_url)) {
     if (is_active) {
       is_active = false
-      remove_class('theater', masthead, page_manager)
-      remove_class('should_transition', masthead, page_manager)
+      remove_class(THEATER, masthead, page_manager)
+      remove_class(SHOULD_TRANSITION, masthead, page_manager)
 
       if (interval_id !== undefined) {
         interval_id = undefined
@@ -80,7 +85,7 @@ function check_url() {
 
   is_active = true
   interval_id = setInterval(update_elements, POLLING_INTERVAL)
-  add_class('should_transition', masthead, page_manager)
+  add_class(SHOULD_TRANSITION, masthead, page_manager)
 }
 
 setInterval(check_url, POLLING_INTERVAL)
