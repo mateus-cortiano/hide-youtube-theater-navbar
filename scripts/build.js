@@ -2,6 +2,11 @@
 
 const fs = require('fs')
 
+// ---
+
+const OUTPUT_FILE = 'bundle.html'
+const OUTPUT_DIR = './dist/'
+
 let buffer = '<!-- hide youtube theater nav bar -->\r\n\r\n'
 
 fs.readFile('./src/script.js', 'utf8', (err, data) => {
@@ -28,7 +33,7 @@ fs.readFile('./src/script.js', 'utf8', (err, data) => {
 
     buffer += '</style>\r\n'
 
-    fs.writeFile('./dist/bundle.html', buffer, 'utf8', err => {
+    fs.writeFile(OUTPUT_DIR + OUTPUT_FILE, buffer, 'utf8', err => {
       if (err) throw err
     })
   })
