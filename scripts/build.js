@@ -28,7 +28,7 @@ fs.readFile('./src/script.js', 'utf8', (err, data) => {
 
     buffer += '</style>\r\n'
 
-    fs.writeFile('./dist/index.html', buffer, 'utf8', err => {
+    fs.writeFile('./dist/bundle.html', buffer, 'utf8', err => {
       if (err) throw err
     })
   })
