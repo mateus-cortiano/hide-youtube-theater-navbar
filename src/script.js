@@ -89,4 +89,6 @@ function check_url() {
   add_class(SHOULD_TRANSITION, masthead, page_manager)
 }
 
+// --
+
 setInterval(check_url, POLLING_INTERVAL)
