@@ -1,0 +1,17 @@
+{
+  "name": "hide-nav-bar",
+  "version": "0.4.2",
+  "description": "js/css injection that hides youtube navbar when in theater mode",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "node ./scripts/build.js"
+  },
+  "keywords": [
+    "youtube",
+    "injection",
+    "navbar",
+    "customization"
+  ],
+  "author": "mateus c. schwarz <mateus.cortiano@gmail.com> (http://mateus.cortiano.info/)",
+  "license": "ISC"
+}

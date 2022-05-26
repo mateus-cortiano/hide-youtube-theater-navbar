@@ -1,0 +1,58 @@
+/* styles */
+
+#masthead-container {
+  transition-property: all !important;
+  transition-duration: 400ms !important;
+  transition-timing-function: ease !important;
+  animation-fill-mode: forwards !important;
+  transition-delay: 250ms !important;
+}
+
+#masthead-container.theater {
+  opacity: 1 !important;
+  z-index: 1000 !important;
+  top: -56px !important;
+  width: 100% !important;
+  padding-bottom: 70px !important;
+  transition-property: all !important;
+  transition-duration: 400ms !important;
+  transition-timing-function: ease !important;
+  animation-fill-mode: forwards !important;
+  transition-delay: 500ms !important;
+}
+
+ytd-page-manager {
+  transition: all 400ms ease !important;
+}
+
+ytd-page-manager.theater {
+  transition-property: all !important;
+  transition-duration: 400ms !important;
+  transition-timing-function: ease !important;
+  transition-delay: 500ms !important;
+  margin-top: 0px !important;
+  padding-top: 24px !important;
+  background: black !important;
+}
+
+#masthead-container {
+  transition: all 400ms ease !important;
+}
+
+#masthead-container:hover.theater {
+  opacity: 1 !important;
+  top: 0 !important;
+  height: 70px !important;
+  width: 100% !important;
+  animation-fill-mode: backwards !important;
+  transition: all 400ms ease !important;
+  transition-delay: 200ms !important;
+}
+
+#masthead-container:hover.theater ~ ytd-page-manager {
+  margin-top: 56px !important;
+  transition-property: all !important;
+  transition-duration: 400ms !important;
+  transition-timing-function: ease !important;
+  transition-delay: 200ms !important;
+}
