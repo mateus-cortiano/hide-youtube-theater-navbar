@@ -46,22 +46,20 @@ function remove_class(class_name, ...elements) {
   for (let element of elements) element.removeClass(class_name)
 }
 
-function update_elements() {
+async function update_elements() {
   if (!is_active) return
 
-  Promise.resolve(
-    wait_for_condition(() => ($(WATCH_ELEMENT).length === 0 ? false : true))
-  ).then(() => {
-    let target = $(WATCH_ELEMENT)
-    let istheater = target.attr(THEATER) === undefined ? false : true
+  await wait_for_condition(() => ($(WATCH_ELEMENT).length === 0 ? false : true))
 
-    if (!istheater) {
-      remove_class(THEATER, masthead, page_manager)
-      return
-    }
+  let target = $(WATCH_ELEMENT)
+  let istheater = target.attr(THEATER) === undefined ? false : true
 
-    add_class(THEATER, masthead, page_manager)
-  })
+  if (!istheater) {
+    remove_class(THEATER, masthead, page_manager)
+    return
+  }
+
+  add_class(THEATER, masthead, page_manager)
 }
 
 function check_url() {
