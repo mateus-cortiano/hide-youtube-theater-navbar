@@ -1,4 +1,4 @@
-/* js */
+/* script.js */
 
 const POLLING_INTERVAL = 1500
 const SHOULD_TRANSITION = 'should_transition'

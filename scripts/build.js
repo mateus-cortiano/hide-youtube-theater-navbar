@@ -1,4 +1,4 @@
-/* export.js */
+/* build.js */
 
 const fs = require('fs')
 
