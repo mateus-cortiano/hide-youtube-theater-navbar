@@ -82,7 +82,7 @@ function check_url() {
     return
   }
 
-  if (is_active && !(interval_id === undefined)) return
+  if (is_active && interval_id !== undefined) return
 
   is_active = true
   interval_id = setInterval(update_elements, POLLING_INTERVAL)
