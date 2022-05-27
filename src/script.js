@@ -6,7 +6,7 @@ const THEATER = 'theater'
 const WATCH_ELEMENT = 'ytd-watch-flexy'
 const MASTHEAD = '#masthead-container'
 const PAGE_MANAGER_CLASS = 'ytd-page-manager'
-const URL_REGEX_PATTERN = /https?:\/\/www.youtube.com($|\/$|\/\?.*$)/
+const URL_REGEX_PATTERN = /https?:\/\/www.youtube.com\/watch\?.*$/
 
 const body = $(document.body)
 const page_manager = $(PAGE_MANAGER_CLASS)
@@ -15,7 +15,7 @@ const pattern = new RegExp(URL_REGEX_PATTERN)
 
 let interval_id = undefined
 let current_url = window.location.href
-let is_active = pattern.test(current_url) ? false : true
+let is_active = pattern.test(current_url) ? true : false
 
 // ---
 
@@ -65,7 +65,7 @@ async function update_elements() {
 function check_url() {
   current_url = window.location.href
 
-  if (pattern.test(current_url)) {
+  if (!pattern.test(current_url)) {
     if (is_active) {
       is_active = false
       remove_class(THEATER, masthead, page_manager)
