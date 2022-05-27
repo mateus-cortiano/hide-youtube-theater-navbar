@@ -74,8 +74,8 @@ function check_url() {
       remove_class(SHOULD_TRANSITION, masthead, page_manager)
 
       if (interval_id !== undefined) {
-        interval_id = undefined
         clearInterval(interval_id)
+        interval_id = undefined
       }
     }
 
