@@ -1,6 +1,6 @@
 /* script.js */
 
-const POLLING_INTERVAL = 1500
+const POLLING_INTERVAL = 1600
 const SHOULD_TRANSITION = 'should_transition'
 const THEATER = 'theater'
 const WATCH_ELEMENT = 'ytd-watch-flexy'
@@ -25,14 +25,14 @@ async function wait_for(ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-async function wait_for_condition(condition, max_retries = 7, time_mult = 50) {
+async function wait_for_condition(condition, max_retries = 6, time_mult = 5) {
   async function retry(retries = 0) {
     if (condition()) return Promise.resolve()
 
     if (retries > max_retries)
       return Promise.reject(`Max retries reached for ${condition}`)
 
-    await wait_for(2 ** retries * time_mult)
+    await wait_for(time_mult ** retries)
 
     return retry(retries + 1)
   }
