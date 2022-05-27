@@ -7,7 +7,7 @@ const WATCH_ELEMENT = 'ytd-watch-flexy'
 const MASTHEAD = '#masthead-container'
 const PAGE_MANAGER_CLASS = 'ytd-page-manager'
 
-// matches youtube.com/watch urls
+// matches 'youtube.com/watch' urls
 const URL_REGEX_PATTERN = /https?:\/\/www.youtube.com\/watch\?.*$/
 
 const body = $(document.body)
