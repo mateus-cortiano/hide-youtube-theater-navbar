@@ -3,6 +3,7 @@
 #masthead-container.should_transition {
   transition: all 600ms, color 2s ease !important;
   animation-fill-mode: forwards !important;
+  transition-delay: 200ms !important;
 }
 
 #masthead-container.theater.should_transition {
@@ -12,10 +13,12 @@
   width: 100% !important;
   opacity: 1 !important;
   transition: all 600ms, color 2s ease !important;
+  transition-delay: 200ms !important;
 }
 
 ytd-page-manager.should_transition {
   transition: all 600ms ease !important;
+  transition-delay: 200ms !important;
 }
 
 ytd-page-manager.theater.should_transition {
@@ -23,10 +26,12 @@ ytd-page-manager.theater.should_transition {
   padding-top: 24px !important;
   background: black !important;
   transition: all 600ms, color 2s ease !important;
+  transition-delay: 200ms !important;
 }
 
 #masthead-container.should_transition {
   transition: all 600ms ease !important;
+  transition-delay: 200ms !important;
 }
 
 #masthead-container:hover.theater.should_transition {
@@ -36,9 +41,12 @@ ytd-page-manager.theater.should_transition {
   opacity: 1 !important;
   transition: all 400ms, color 2s ease !important;
   animation-fill-mode: backwards !important;
+  transition-delay: 200ms !important;
 }
 
 #masthead-container:hover.theater.should_transition ~ ytd-page-manager {
   margin-top: 56px !important;
+  padding-top: 0 !important;
   transition: all 400ms, color 2s ease !important;
+  transition-delay: 200ms !important;
 }
