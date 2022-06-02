@@ -48,6 +48,17 @@ function remove_class(class_name, ...elements) {
   for (let element of elements) element.removeClass(class_name)
 }
 
+function hide_scrollbar() {
+  let style = $(
+    '<style id="hidden-scrollbar">::-webkit-scrollbar { display: none; visibility: hidden; }</style>'
+  )
+  $('html > head').append(style)
+}
+
+function show_scrollbar() {
+  $('style[id="hidden-scrollbar"]').remove()
+}
+
 async function update_elements() {
   if (!is_active) return
 
@@ -58,10 +69,12 @@ async function update_elements() {
 
   if (!istheater) {
     remove_class(THEATER, masthead, page_manager)
+    show_scrollbar()
     return
   }
 
   add_class(THEATER, masthead, page_manager)
+  hide_scrollbar()
 }
 
 function check_url() {
